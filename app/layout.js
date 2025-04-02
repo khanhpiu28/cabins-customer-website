@@ -1,6 +1,3 @@
-import Logo from "@/app/_components/Logo";
-import Navigation from "@/app/_components/Navigation";
-
 import { Josefin_Sans } from "next/font/google";
 
 const josefin = Josefin_Sans({
@@ -12,7 +9,6 @@ import "@/app/_styles/global.css";
 import Header from "./_components/Header";
 
 export const metadata = {
-  // title: "Piu Cabin",
   title: {
     template: "%s Piu Cabin",
     default: "Welcome / Piu Cabin",
