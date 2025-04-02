@@ -4,7 +4,13 @@ import Navigation from "@/app/_components/Navigation";
 import "@/app/_styles/global.css";
 
 export const metadata = {
-  title: "Piu Cabin",
+  // title: "Piu Cabin",
+  title: {
+    template: "%s Piu Cabin",
+    default: "Welcome / Piu Cabin",
+  },
+  description:
+    "Luxurious cabin hotel, located in the heart of Da Lat, surrounded by beautiful mountains and dark forests ",
 };
 
 export default function RootLayout({ children }) {
