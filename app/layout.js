@@ -9,6 +9,7 @@ const josefin = Josefin_Sans({
 });
 
 import "@/app/_styles/global.css";
+import Header from "./_components/Header";
 
 export const metadata = {
   // title: "Piu Cabin",
@@ -24,14 +25,12 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${josefin.className} bg-primary-950 text-primary-50 min-h-screen`}
+        className={`${josefin.className} antialiased bg-primary-950 text-primary-50 min-h-screen flex flex-col`}
       >
-        <header>
-          <Logo />
-          <Navigation />
-        </header>
-        <main>{children}</main>
-        <footer>Copyright by Piu Cabin</footer>
+        <Header />
+        <div className="flex-1 px-8 py-12">
+          <main className="max-w-7xl mx-auto">{children}</main>
+        </div>
       </body>
     </html>
   );
