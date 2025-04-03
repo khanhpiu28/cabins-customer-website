@@ -1,18 +1,23 @@
 import Image from "next/image";
 import image1 from "@/public/about-1.jpg";
 import image2 from "@/public/about-2.jpg";
+import { getCabins } from "../_lib/data-service";
 import Link from "next/link";
+
+export const revalidate = 86400;
 
 export const metadata = {
   title: "About",
 };
 
-export default function Page() {
+export default async function Page() {
+  const cabins = await getCabins();
+
   return (
     <div className="grid grid-cols-5 gap-x-24 gap-y-32 text-lg items-center">
       <div className="col-span-3">
         <h1 className="text-4xl mb-10 text-accent-400 font-medium">
-          Welcome to The Wild Oasis
+          Welcome to Piu Cabin
         </h1>
 
         <div className="space-y-8">
@@ -24,10 +29,10 @@ export default function Page() {
             and enjoying simple pleasures with family.
           </p>
           <p>
-            Our 8 luxury cabins provide a cozy base, but the real freedom and
-            peace you&apos;ll find in the surrounding mountains. Wander through
-            lush forests, breathe in the fresh air, and watch the stars twinkle
-            above from the warmth of a campfire or your hot tub.
+            Our {cabins.length} luxury cabins provide a cozy base, but the real
+            freedom and peace you&apos;ll find in the surrounding mountains.
+            Wander through lush forests, breathe in the fresh air, and watch the
+            stars twinkle above from the warmth of a campfire or your hot tub.
           </p>
           <p>
             This is where memorable moments are made, surrounded by
@@ -46,12 +51,12 @@ export default function Page() {
         />
       </div>
 
-      <div className="col-span-2 relative aspect-square">
+      <div className="relative aspect-square col-span-2">
         <Image
-          src={image2}
+          src="/about-2.jpg"
           fill
           className="object-cover"
-          alt="Family that manages The Wild Oasis"
+          alt="Family that manages Piu Cabin"
         />
       </div>
 
@@ -71,9 +76,9 @@ export default function Page() {
             Over the years, we&apos;ve maintained the essence of Piu Cabin,
             blending the timeless beauty of the mountains with the personal
             touch only a family business can offer. Here, you&apos;re not just a
-            guest; you&apos;re part of our extended family. So join us at The
-            Wild Oasis soon, where tradition meets tranquility, and every visit
-            is like coming home.
+            guest; you&apos;re part of our extended family. So join us at Piu
+            Cabin soon, where tradition meets tranquility, and every visit is
+            like coming home.
           </p>
 
           <div>
