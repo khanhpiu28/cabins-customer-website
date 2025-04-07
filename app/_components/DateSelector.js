@@ -61,14 +61,9 @@ function DateSelector({ settings, cabin, bookedDates }) {
         selected={displayRange}
         min={minBookingLength}
         max={maxBookingLength}
-        // // OLD API
-        // fromMonth={new Date()}
-        // fromDate={new Date()}
-        // toYear={new Date().getFullYear() + 5}
-        // BASED ON NEW API
         startMonth={new Date()}
         startDate={new Date()}
-        endMonth={new Date(new Date().getFullYear() + 5, 11)} // Dicembre dell'anno 5 anni avanti
+        endMonth={new Date(new Date().getFullYear() + 5, 11)}
         captionLayout="dropdown"
         numberOfMonths={2}
         disabled={(curDate) =>
