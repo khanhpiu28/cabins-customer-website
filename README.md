@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏕️ Piu Cabins – Customer Website
 
-## Getting Started
+This is the customer-facing website for **Piu Cabins**, a fictional cabin hotel. Guests can explore cabins, make and manage reservations, and update their profiles. The project is built with **Next.js**, **Supabase**, **React Query**, and **Tailwind CSS**.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 🏨 About
+- View information about the Piu Cabins hotel.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### 🏕️ Cabins
+- Browse all available cabins.
+- View details for each cabin (e.g. description, capacity, price).
+- See available and booked dates.
+- Filter cabins by maximum guest capacity.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📅 Reservations
+- Reserve a cabin for a selected date range.
+- View all past and upcoming reservations.
+- Edit or cancel existing reservations.
+- All reservations are marked as “unconfirmed” by default (no online payment).
 
-## Learn More
+### 🔐 Authentication
+- Sign up and log in using email and password.
+- Authenticated users can create and manage reservations.
 
-To learn more about Next.js, take a look at the following resources:
+### 👤 Profile
+- Automatically create a profile upon sign-up.
+- Update basic personal details to speed up check-in.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🧭 Pages & Routes
 
-## Deploy on Vercel
+| Feature           | Route                             |
+|-------------------|------------------------------------|
+| Homepage          | `/`                                |
+| About             | `/about`                           |
+| Cabin Overview    | `/cabins`                          |
+| Cabin Detail      | `/cabins/:cabinId`                 |
+| Login             | `/login`                           |
+| Reservation List  | `/account/reservations`            |
+| Edit Reservation  | `/account/reservations/edit`       |
+| Update Profile    | `/account/profile`                 |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js](https://nextjs.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Database & Auth**: [Supabase](https://supabase.com/)
+- **Data Fetching**: [React Query](https://tanstack.com/query)
+- **State Management**: React Context API
+
+---
+
+## 📌 Notes
+
+This project shares the same Supabase backend and database schema as the admin app built in the main **cabins-management-app** project. This version is focused exclusively on the **guest experience**.
